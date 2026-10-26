@@ -1,28 +1,37 @@
-# world-05-book — 공정 5/12
+<p align="center"><img src="assets/cover.svg" alt="Station 05 — Web Book" width="100%"></p>
 
-웹 책 — PWA 출판(책처럼 읽고 앱처럼 설치)
+# world-05-book — Web Book
 
-> FAB 공정: **WC-05 증착 · 배선(완제품)** · 대화 1건 = LOT 1개 · 트래블러 = world-02-ledger/LOTS.json · 수율 · 재공 · 스크랩 = `world kpi`
+**Station 05 of 12 in the LFAI WORLD knowledge factory.** Approved material becomes a web book (PWA): readable like a book, installable like an app.
 
-| 앞 공정 | 이 공정 | 다음 공정 |
+| Upstream | This station | Downstream |
 |---|---|---|
-| [world-04-gate](https://github.com/dimaspark/world-04-gate) | **world-05-book** | [world-06-cards](https://github.com/dimaspark/world-06-cards) |
+| [world-04-gate](https://github.com/dimaspark/world-04-gate) | **world-05-book** · WC-05 · Deposition & interconnect | [world-06-cards](https://github.com/dimaspark/world-06-cards) |
 
-## 공장 전체 지도
+## What LFAI WORLD is
+A personal publishing factory that lives inside **one GitHub account**. People who create knowledge every day — writers, lecturers, researchers, creators — already think out loud with AI assistants. LFAI WORLD turns those conversations into owned, published assets: web books, cards, audio scripts, courseware and a searchable archive.
 
-1. [world-01-inbox](https://github.com/dimaspark/world-01-inbox) — 대화 채집 · WC-01
-2. [world-02-ledger](https://github.com/dimaspark/world-02-ledger) — 원장 · 필터 · WC-02
-3. [world-03-atoms](https://github.com/dimaspark/world-03-atoms) — 지식원자 · WC-03
-4. [world-04-gate](https://github.com/dimaspark/world-04-gate) — 공개 관문 · WC-04
-5. **world-05-book** ← 여기 — 웹 책 · WC-05
-6. [world-06-cards](https://github.com/dimaspark/world-06-cards) — 카드 · 글 · WC-06
-7. [world-07-voice](https://github.com/dimaspark/world-07-voice) — 오디오 · WC-07
-8. [world-08-motion](https://github.com/dimaspark/world-08-motion) — 영상 · WC-08
-9. [world-09-class](https://github.com/dimaspark/world-09-class) — 교재 · 원고 · WC-09
-10. [world-10-press](https://github.com/dimaspark/world-10-press) — 배포 · WC-10
-11. [world-11-archive](https://github.com/dimaspark/world-11-archive) — 서고 · 내 말투 · WC-11
-12. [world-12-mirror](https://github.com/dimaspark/world-12-mirror) — 사본 · 이사 · WC-12
+- **Owned, not rented.** Source material stays on the owner's devices and in the owner's account. Every clone is a complete backup; the factory can move anywhere.
+- **No GPU, no server bill.** The pipeline is deterministic orchestration (cleaning, splitting, masking, building) that runs on a laptop, a mini PC or an Android phone. The owner chooses and pays for their own AI model, only for what they use.
+- **Human approval is the gate.** Nothing is published until a person approves it at station 04.
+- **Fab-grade traceability.** Each conversation is a *lot*. Its traveler records every station it passes; yield, work-in-progress, scrap and cycle time are reported with `world kpi`.
 
-- 공정은 기기에서 `world run`(엔진)이 돌린다. 공개는 gate 공정에서 사람이 승인한 것만.
-- 원본(녹음 · 사진 · 다른 사람의 개인 정보)은 넣지 않는다 — 기기에 둔다.
-- 설치기 v0.4.0 · 2026-10-26
+## The line
+01. [world-01-inbox](https://github.com/dimaspark/world-01-inbox) — Conversation Intake
+02. [world-02-ledger](https://github.com/dimaspark/world-02-ledger) — Ledger & Filter
+03. [world-03-atoms](https://github.com/dimaspark/world-03-atoms) — Knowledge Atoms
+04. [world-04-gate](https://github.com/dimaspark/world-04-gate) — Disclosure Gate
+05. **world-05-book** — Web Book ← *you are here*
+06. [world-06-cards](https://github.com/dimaspark/world-06-cards) — Summary Cards
+07. [world-07-voice](https://github.com/dimaspark/world-07-voice) — Audio
+08. [world-08-motion](https://github.com/dimaspark/world-08-motion) — Motion
+09. [world-09-class](https://github.com/dimaspark/world-09-class) — Courseware
+10. [world-10-press](https://github.com/dimaspark/world-10-press) — Distribution
+11. [world-11-archive](https://github.com/dimaspark/world-11-archive) — Archive & Voice Data
+12. [world-12-mirror](https://github.com/dimaspark/world-12-mirror) — Mirror & Portability
+
+## Operating notes
+- Runs via the `world` command (installer + engine) on the owner's device; this repository holds the station's outputs.
+- Private by default. Raw recordings, photos and third-party personal data are never committed.
+
+<sub>LFAI WORLD · station manifest in `.world/station.json`</sub>
