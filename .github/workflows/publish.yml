@@ -1,0 +1,22 @@
+name: publish
+on: { push: { branches: [main] }, workflow_dispatch: {} }
+permissions: { contents: read, pages: write, id-token: write }
+concurrency: { group: pages, cancel-in-progress: true }
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: 출판 목록만 모으기 + 비밀값 검사
+        run: |
+          mkdir -p _site
+          grep -vE '^\s*(#|$)' PUBLISH | while read -r p; do [ -e "$p" ] && cp -r --parents "$p" _site/; done
+          if grep -rIEn '(ghp_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,}|sk-[A-Za-z0-9]{20,}|-----BEGIN [A-Z ]*PRIVATE KEY)' _site; then echo "비밀값 의심 — 출판 중단"; exit 1; fi
+      - uses: actions/upload-pages-artifact@v3
+        with: { path: _site }
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment: { name: github-pages }
+    steps:
+      - uses: actions/deploy-pages@v4

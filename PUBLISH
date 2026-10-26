@@ -1,0 +1,4 @@
+# 여기 적힌 것만 웹에 나갑니다. 나머지는 서랍 안에만.
+.nojekyll
+index.html
+manifest.webmanifest
