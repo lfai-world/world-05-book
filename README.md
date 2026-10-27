@@ -1,37 +1,41 @@
-<p align="center"><img src="assets/cover.svg" alt="Station 05 — Web Book" width="100%"></p>
+<p align="center"><a href="https://lfai-world.github.io/world-05-book/assets/demo.mp4"><img src="assets/demo.gif" alt="60-second demo: the web book, one chapter's outputs, the three layers, the lesson and the factory dashboard" width="100%"></a></p>
 
-# world-05-book — Web Book
+<p align="center">
+  <a href="https://lfai-world.github.io/world-05-book/"><b>▶ Open the showroom</b></a> &nbsp;·&nbsp;
+  <a href="https://lfai-world.github.io/world-05-book/factory/"><b>Factory dashboard</b></a> &nbsp;·&nbsp;
+  <a href="https://github.com/lfai-world"><b>About the package</b></a>
+</p>
 
-**Station 05 of 12 in the LFAI WORLD knowledge factory.** Approved material becomes a web book (PWA): readable like a book, installable like an app.
+## Drawer 05 — the web book, and the public showroom of this factory
 
-| Upstream | This station | Downstream |
-|---|---|---|
-| [world-04-gate](https://github.com/lfai-world/world-04-gate) | **world-05-book** · WC-05 · Deposition & interconnect | [world-06-cards](https://github.com/lfai-world/world-06-cards) |
+This account is a package: a headquarters plus twelve drawers that turn AI conversations into published work. Eleven drawers and the headquarters are private. **This drawer is the one public face.** Every other drawer posts what it made here, and this drawer's publish gate puts it on the web — nothing else leaves the factory.
 
-## What LFAI WORLD is
-A personal publishing factory that lives inside **one GitHub account**. People who create knowledge every day — writers, lecturers, researchers, creators — already think out loud with AI assistants. LFAI WORLD turns those conversations into owned, published assets: web books, cards, audio scripts, courseware and a searchable archive.
+| What you can open | Where |
+|---|---|
+| The web book — installable like an app | [lfai-world.github.io/world-05-book](https://lfai-world.github.io/world-05-book/) |
+| One page per chapter — cards, narration, video, lesson, share kit | [example](https://lfai-world.github.io/world-05-book/out/20261027-9e2aedda/) |
+| Each chapter in three layers — edited text · edit process · original conversation | [example](https://lfai-world.github.io/world-05-book/chapters/20260413-5d73301e.html) |
+| Search across chapters · RSS | on the showroom home · [feed.xml](https://lfai-world.github.io/world-05-book/feed.xml) |
+| The factory dashboard — lots, yield, twelve stations, wiring, the self-scored QA | [factory/](https://lfai-world.github.io/world-05-book/factory/) |
 
-- **Owned, not rented.** Source material stays on the owner's devices and in the owner's account. Every clone is a complete backup; the factory can move anywhere.
-- **No GPU, no server bill.** The pipeline is deterministic orchestration (cleaning, splitting, masking, building) that runs on a laptop, a mini PC or an Android phone. The owner chooses and pays for their own AI model, only for what they use.
-- **Human approval is the gate.** Nothing is published until a person approves it at station 04.
-- **Fab-grade traceability.** Each conversation is a *lot*. Its traveler records every station it passes; yield, work-in-progress, scrap and cycle time are reported with `world kpi`.
+## How a result gets here
 
-## The line
-01. [world-01-inbox](https://github.com/lfai-world/world-01-inbox) — Conversation Intake
-02. [world-02-ledger](https://github.com/lfai-world/world-02-ledger) — Ledger & Filter
-03. [world-03-atoms](https://github.com/lfai-world/world-03-atoms) — Knowledge Atoms
-04. [world-04-gate](https://github.com/lfai-world/world-04-gate) — Disclosure Gate
-05. **world-05-book** — Web Book ← *you are here*
-06. [world-06-cards](https://github.com/lfai-world/world-06-cards) — Summary Cards
-07. [world-07-voice](https://github.com/lfai-world/world-07-voice) — Audio
-08. [world-08-motion](https://github.com/lfai-world/world-08-motion) — Motion
-09. [world-09-class](https://github.com/lfai-world/world-09-class) — Courseware
-10. [world-10-press](https://github.com/lfai-world/world-10-press) — Distribution
-11. [world-11-archive](https://github.com/lfai-world/world-11-archive) — Archive & Voice Data
-12. [world-12-mirror](https://github.com/lfai-world/world-12-mirror) — Mirror & Portability
+<p align="center"><img src="assets/architecture.png" alt="Devices run the engine; one account holds HQ and twelve drawers; a person approves at the gate" width="100%"></p>
 
-## Operating notes
-- Runs via the `world` command (installer + engine) on the owner's device; this repository holds the station's outputs.
-- Private by default. Raw recordings, photos and third-party personal data are never committed.
+1. A conversation lands in drawer 01 — shared from a phone or entered through an issue form.
+2. A private runner cleans it (02), splits it (03) and holds it at the gate (04) until **a person approves**. An open-source scanner (detect-secrets) checks it again on the way out.
+3. Drawers 06 – 10 make the outputs — cards, narration in the owner's voice, a vertical video (HyperFrames), a lesson, a share kit.
+4. Everything approved is **posted to this drawer**; its `PUBLISH` list decides what goes on the web, and a secret check runs before every deploy.
+5. Drawer 11 keeps the search index and the owner's style data; drawer 12 keeps full backups as releases.
 
-<sub>LFAI WORLD · station manifest in `.world/station.json`</sub>
+## Nothing is hidden — the edit is part of the product
+
+<p align="center"><img src="assets/three-layers.png" alt="One chapter in three layers: edited text, edit process, original conversation" width="100%"></p>
+
+## Learn the way it is run
+- [Playbook — ten lessons](playbook/README.md), each tied to something running in this account.
+- [Instructions](https://github.com/lfai-world/world-05-book/issues?q=is%3Aissue) — what the owner said, filed as issues and worked through to done. New instructions use the *Instruction* form; every change is a pull request that a check validates and the owner approves.
+
+<p align="center"><a href="https://lfai-world.github.io/world-05-book/factory/"><img src="assets/dashboard.png" alt="The factory dashboard" width="100%"></a></p>
+
+<sub>LFAI WORLD · Life First, AI Second · Not affiliated with the LF AI & Data Foundation.</sub>
