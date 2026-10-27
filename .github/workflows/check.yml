@@ -1,0 +1,30 @@
+# Every pull request is checked before the owner is asked for OK. Public repository: free minutes, no keys used.
+name: check
+on:
+  pull_request: {}
+  workflow_dispatch: {}
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: JSON files parse
+        run: for f in $(git ls-files '*.json'); do python3 -m json.tool "$f" >/dev/null || { echo "bad JSON $f"; exit 1; }; done; echo "json ok"
+      - name: No secrets, no personal data
+        run: |
+          if git ls-files -z | xargs -0 grep -nIE 'ghp_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,}|[0-9]{8,10}:AA[A-Za-z0-9_-]{30,}|sk-[A-Za-z0-9]{20,}|(^|[^0-9])01[016789]-?[0-9]{3,4}-?[0-9]{4}([^0-9]|$)'; then echo "found secret or phone number"; exit 1; fi
+          echo "clean"
+      - name: Local links resolve
+        run: |
+          python3 - <<'PY'
+          import re, pathlib, sys
+          bad = []
+          for p in pathlib.Path(".").rglob("*.md"):
+              if ".git" in p.parts: continue
+              for l in re.findall(r"\]\(([^)#\s]+)", p.read_text(encoding="utf-8", errors="ignore")):
+                  if l.startswith(("http", "mailto:")): continue
+                  if not (p.parent / l).exists(): bad.append(f"{p}: {l}")
+          print("\n".join(bad) or "links ok"); sys.exit(1 if bad else 0)
+          PY
