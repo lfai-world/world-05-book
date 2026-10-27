@@ -1,5 +1,13 @@
-# 여기 적힌 것만 웹에 나갑니다. 나머지는 서랍 안에만.
+# 여기 적힌 것만 웹에 나갑니다(공장이 매 런 다시 씀).
 .nojekyll
 index.html
 manifest.webmanifest
+feed.xml
 chapters
+out
+factory
+badges
+status
+kpi
+assets
+pagefind
