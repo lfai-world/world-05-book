@@ -10,8 +10,8 @@
 | Tools | 플러그: 없음(기본 라우트) |
 | Data access | 서랍 12개 + 본사(비공개) · 공개는 05 웹 책 · 프로필 |
 | Known failure modes | 불량 상위: 없음 |
-| Eval summary | 자동 합격 8/8 · 사람 OK 0/0 판정 |
-| Last evaluated | 2026-10-30 06:45 KST (run 40959705739) |
-| Budget | 이번 달 197/2000분 (9.8%) · 월말 예상 10.2% |
-| Rollback | world-12-mirror 릴리스 mirror-20261030-064518 (최근 5개 보관) |
+| Eval summary | 자동 합격 7/7 · 사람 OK 0/0 판정 |
+| Last evaluated | 2026-10-30 07:07 KST (run 40963096187) |
+| Budget | 이번 달 202/2000분 (10.1%) · 월말 예상 10.4% |
+| Rollback | world-12-mirror 릴리스 mirror-20261030-070652 (최근 5개 보관) |
 | Incident contact | 계정 주인 · 텔레그램 보고 |

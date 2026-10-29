@@ -7,7 +7,7 @@ principals:                          # allowed_signers 의 이름 → 역할
   claude: agent-dev                  # 설계 · 개발 에이전트
   deepseek: agent-test               # 시험 에이전트
 roles:
-  owner:      [intake, approve, hold, verdict, plug, recipe, run, halt, resume]
+  owner:      [intake, approve, hold, verdict, plug, recipe, run, halt, resume, forget, schedule]
   agent-dev:  [intake, plug, recipe, run]
   agent-test: [intake, run]
 public: [<owner>, <prefix>-05-book]

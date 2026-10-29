@@ -1,0 +1,21 @@
+{
+ "schema": "lfai-world/schedules v1",
+ "jobs": [
+  {
+   "name": "weekly-digest",
+   "every": "weekly",
+   "job": "digest",
+   "enabled": true,
+   "created": "2026-10-30T06:51:11+09:00",
+   "runs": 1,
+   "by": "owner-gate",
+   "last_run": "2026-10-30T06:51:57+09:00",
+   "history": [
+    {
+     "at": "2026-10-30T06:51:57+09:00",
+     "result": "요약 텔레그램 전송"
+    }
+   ]
+  }
+ ]
+}
