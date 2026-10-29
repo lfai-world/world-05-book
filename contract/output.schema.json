@@ -1,0 +1,12 @@
+{
+  "schema": "lfai-world/output-spec v1",
+  "note": "제품 스펙 시트 — 장 하나(LOT)가 출하될 때 맞아야 하는 사양. fab.py 가 이 표로 검사하고 성적서(COA)에 적는다.",
+  "outputs": {
+    "book":  {"station": "WC-05", "path": "world-05-book/chapters/<lot>.html", "spec": {"layers": ["편집본", "편집 과정", "원본 대화"]}},
+    "cards": {"station": "WC-06", "path": "world-06-cards/<lot>/NN.png", "spec": {"width": 1080, "height": 1350, "count": "표지 + 절(최대 8) + 마무리", "min_fill": 0.30, "max_lopsided": 0.25}},
+    "voice": {"station": "WC-07", "path": "world-07-voice/<lot>.mp3", "spec": {"min_sec": 3, "min_mean_db": -45}},
+    "motion":{"station": "WC-08", "path": "world-08-motion/<lot>.mp4", "spec": {"width": 1080, "height": 1920, "max_av_delta_sec": 1.0, "subtitles": true}},
+    "class": {"station": "WC-09", "path": "world-09-class/<lot>.md · .html", "spec": {"sections": ["학습 목표", "핵심", "본문", "확인 질문", "토론 질문"]}},
+    "press": {"station": "WC-10", "path": "world-10-press/<lot>.md", "spec": {"channels": ["X · Threads", "블로그 · 페이스북", "카카오톡 · 문자"]}}
+  }
+}

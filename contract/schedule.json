@@ -1,0 +1,21 @@
+{
+  "schema": "lfai-world/schedule v1",
+  "note": "스케줄러 정책 — 회전을 시작해도 되는지 sched.py 가 판정한다(기본은 보수적).",
+  "limits": {
+    "per_day": 12,
+    "min_gap_min": 20,
+    "quiet_hours": [],
+    "jitter_min": 0
+  },
+  "retry": {
+    "max_per_day": 3,
+    "backoff_min": [10, 30, 90]
+  },
+  "priority": {"manual": 0, "dispatch": 1, "schedule": 2, "retry": 3},
+  "pause": {"file": "PAUSE", "where": "hq", "actor": "owner"},
+  "env": {
+    "per_day": "WORLD_SCHED_PER_DAY",
+    "min_gap_min": "WORLD_SCHED_MIN_GAP",
+    "jitter_min": "WORLD_SCHED_JITTER"
+  }
+}

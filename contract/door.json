@@ -1,0 +1,102 @@
+{
+  "schema": "lfai-world/door v1",
+  "note": "단일 문 — 들어오는 모든 사건은 이 표에 있는 종류만 받는다(모르는 종류 = 거부).",
+  "kinds": {
+    "intake": {
+      "sources": [
+        "push",
+        "dispatch",
+        "manual",
+        "issue"
+      ],
+      "actors": [
+        "owner",
+        "runner",
+        "claude",
+        "deepseek"
+      ],
+      "needs": [
+        "file"
+      ],
+      "to": "inbox"
+    },
+    "approval": {
+      "sources": [
+        "push",
+        "issue",
+        "comment",
+        "manual"
+      ],
+      "actors": [
+        "owner"
+      ],
+      "needs": [
+        "ref"
+      ],
+      "to": "gate"
+    },
+    "reply": {
+      "sources": [
+        "issue",
+        "comment",
+        "manual"
+      ],
+      "actors": [
+        "owner",
+        "reader"
+      ],
+      "needs": [
+        "text"
+      ],
+      "to": "inbox"
+    },
+    "signal": {
+      "sources": [
+        "push",
+        "dispatch",
+        "timer",
+        "schedule",
+        "manual",
+        "issue"
+      ],
+      "actors": [
+        "owner",
+        "runner",
+        "claude",
+        "deepseek"
+      ],
+      "needs": [
+        "text"
+      ],
+      "to": "inbox"
+    },
+    "plug": {
+      "sources": [
+        "manual"
+      ],
+      "actors": [
+        "owner",
+        "claude"
+      ],
+      "needs": [
+        "text"
+      ],
+      "to": "inbox"
+    },
+    "human": {
+      "sources": [
+        "manual"
+      ],
+      "actors": [
+        "owner"
+      ],
+      "needs": [
+        "text"
+      ],
+      "to": "inbox"
+    }
+  },
+  "dedup_hours": 24,
+  "strict_env": "WORLD_DOOR_STRICT",
+  "note2": "intake 는 payload 파일이 있어야 한다(문을 지나는 최소 조건). 나머지는 글 또는 참조."
+}

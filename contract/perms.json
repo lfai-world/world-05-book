@@ -1,0 +1,126 @@
+{
+  "schema": "lfai-world/perms v1",
+  "note": "권한 실집행표 — perm.py 가 매 실행 판정한다(기본 거부). 사람이 읽는 표는 contract/permissions.yaml.",
+  "actors": {
+    "owner": "계정 주인 — 서랍 읽기·쓰기, 공개 승인, 발행, 플러그, 일시정지",
+    "runner": "자동화(공장 러너) — 승인은 못 한다(사람 경계). 서랍 읽기·쓰기, 발행, 회전",
+    "reader": "독자 — 공개 표면 읽기만",
+    "plug": "플러그 — 자기 소켓 입·출력만",
+    "claude": "개발 에이전트 — 주문(intake · plug · run)만. 서랍 쓰기 없음",
+    "deepseek": "시험 에이전트 — 주문(intake · run)만. 서랍 쓰기 없음"
+  },
+  "allow": {
+    "owner": {
+      "actions": [
+        "read",
+        "write",
+        "approve",
+        "publish",
+        "plug",
+        "run",
+        "pause",
+        "door:accept",
+        "sign"
+      ],
+      "resources": [
+        "*"
+      ]
+    },
+    "runner": {
+      "actions": [
+        "read",
+        "write",
+        "publish",
+        "run",
+        "door:accept",
+        "sign"
+      ],
+      "resources": [
+        "station:*",
+        "lot:*",
+        "hq",
+        "door:*",
+        "sock:*",
+        "factory"
+      ]
+    },
+    "reader": {
+      "actions": [
+        "read"
+      ],
+      "resources": [
+        "public:book",
+        "public:profile",
+        "public:showroom",
+        "station:book"
+      ]
+    },
+    "plug": {
+      "actions": [
+        "read",
+        "write"
+      ],
+      "resources": [
+        "plug:in",
+        "plug:out",
+        "station:voice:out",
+        "station:motion:out"
+      ]
+    },
+    "claude": {
+      "actions": [
+        "read",
+        "run",
+        "door:accept",
+        "sign"
+      ],
+      "resources": [
+        "door:intake",
+        "door:signal",
+        "door:plug",
+        "station:*",
+        "lot:*",
+        "sock:*"
+      ]
+    },
+    "deepseek": {
+      "actions": [
+        "read",
+        "run",
+        "door:accept",
+        "sign"
+      ],
+      "resources": [
+        "door:intake",
+        "door:signal",
+        "station:*",
+        "lot:*",
+        "sock:*"
+      ]
+    }
+  },
+  "boundaries": {
+    "approve": {
+      "actor": "owner",
+      "why": "공개 · 외부 전송은 사람만 넘는다"
+    },
+    "publish": {
+      "targets": [
+        "book",
+        "press"
+      ],
+      "needs": "approve"
+    }
+  },
+  "never": [
+    "비밀번호 · 2단계 코드 · AI 열쇠를 저장소 · 로그 · 화면에 쓰기",
+    "runner 가 approve 를 대신하기",
+    "plug 가 자기 소켓 밖에 쓰기"
+  ],
+  "aliases": {
+    "owner-gate": "owner",
+    "owner-form": "owner",
+    "claude": "claude",
+    "deepseek": "deepseek"
+  }
+}

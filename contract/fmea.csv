@@ -1,0 +1,15 @@
+station,failure_mode,effect,severity,occurrence,detection,rpn,control,gate
+WC-01 inbox,대화 원본 누락 · 깨짐,장이 안 생김,4,2,2,16,원장 중복 · 형식 검사,auto
+WC-02 ledger,중복 대화 두 번 출판,같은 장 두 개,3,3,2,18,해시 중복 거름,auto
+WC-03 atoms,지식원자 길이 이상,카드 · 교재 품질 저하,3,3,3,27,recipe atoms min/max,auto
+WC-04 gate,개인정보 · 비밀값이 가려지지 않음,공개 쇼룸에 노출(되돌리기 어려움),10,2,3,60,가림 규칙 + detect-secrets + 사람 승인,HUMAN
+WC-04 gate,승인 안 된 장이 공개,공개 사고,10,1,2,20,approved.txt 목록만 출판,HUMAN
+WC-05 book,웹 책 깨짐 · 끊긴 링크,독자 이탈,5,3,2,30,qa_cloud 링크 · 페이지 검사,auto
+WC-06 cards,카드 빈 공간 · 제목 줄바꿈,품질 저하,4,4,3,48,fab 검사 E-CARD-* + 사람 검사,HUMAN-QC
+WC-07 voice,낭독 무음 · 끊김,품질 저하,5,2,2,20,fab 검사 E-AV-SILENT,auto
+WC-08 motion,영상 · 낭독 길이 어긋남 · 자막 없음,품질 저하,5,3,2,30,fab 검사 E-AV-LEN · E-VIDEO-NOSUB,HUMAN-QC
+WC-09 class,교재 누락,결과물 빠짐,3,2,2,12,파일 존재 검사,auto
+WC-10 press,공유 문구 주소 틀림,잘못된 링크 퍼짐,4,2,3,24,qa_cloud 링크 검사,auto
+WC-11 archive,검색 색인 누락,검색 안 됨,2,3,2,12,Pagefind 빌드 확인,auto
+WC-12 mirror,백업 실패,복구 불가,8,2,2,32,릴리스 5개 유지 + 복원 실측,auto
+ALL,무료 분 예산 초과,회전 멈춤,6,3,2,36,원가 원장 예산 게이지 · 70% 경보,auto

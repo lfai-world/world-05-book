@@ -1,0 +1,16 @@
+{
+  "schema": "lfai-world/syscalls v1",
+  "note": "단일 문 — 모든 작업은 본사 Issue(라벨 order) 하나로 들어온다. 본문 = 주문 JSON + ssh 서명. 커널이 서명 → 역할 → 인자 → 정지 상태 → 계약을 검사하고 실행, journal/syscalls.jsonl 에 남긴다.",
+  "ops": {
+    "intake":  {"args": {"title": "str", "text": "str(≤200000)", "llm": "str"}, "effect": "01 inbox raw/ 에 대화 넣기 → 회전"},
+    "approve": {"args": {"lot": "lot"}, "effect": "04 approved.txt 에 올림 → 회전(공개)"},
+    "hold":    {"args": {"lot": "lot"}, "effect": "04 approved.txt 에서 뺌(다음 회전부터 비공개)"},
+    "verdict": {"args": {"lot": "lot", "verdict": "OK|NO", "codes": "[E-…]", "memo": "str"}, "effect": "본사 contract/eval.cases.jsonl(골든셋)"},
+    "plug":    {"args": {"action": "add|remove", "name": "plugs.json 이름", "route": "switch|local"}, "effect": "02 변수 WORLD_PLUGS"},
+    "recipe":  {"args": {"key": "recipe.json 의 점 경로(허용 목록)", "value": "number|str"}, "effect": "본사 recipe.json"},
+    "run":     {"args": {}, "effect": "공장 한 바퀴(world-run)"},
+    "halt":    {"args": {"reason": "str"}, "effect": "본사 status/HALT — 라인 정지(인터럽트). 회전 · 게시가 멈춘다"},
+    "resume":  {"args": {}, "effect": "HALT 해제"}
+  },
+  "recipe_keys": ["quality.book", "quality.cards", "quality.voice", "quality.motion", "quality.class", "atoms.min_chars", "atoms.max_chars", "std_cost.media_min_per_lot", "std_cost.common_min_per_lot"]
+}

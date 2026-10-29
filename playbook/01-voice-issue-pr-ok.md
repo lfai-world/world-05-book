@@ -11,7 +11,7 @@ Most people use GitHub by typing commands. Here the owner only speaks; the agent
 
 ## Worked example — this lesson
 - The owner said: *"If this is right, shouldn't this HQ repository and this loop go into the teaching material?"*
-- The agent filed it as **[Issue #1](https://github.com/lfai-world/world-hq/issues/1)** with four *Done when* checks.
+- The agent filed it as **Issue #1** (HQ repository · private) with four *Done when* checks.
 - This playbook is the pull request that closes it. Open the **Pull requests** tab to see its check and the owner's decision.
 
 ## Why it matters

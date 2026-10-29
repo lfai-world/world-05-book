@@ -1,6 +1,6 @@
 # 04 · Pages — a website with no server
 
-[The dashboard](https://lfai-world.github.io/world-hq/) is a plain HTML file in this repository. GitHub Pages serves it worldwide for free; every push redeploys it in about a minute. Web-book chapters are installable like an app (PWA).
+[The dashboard](https://lfai-world.github.io/world-05-book/factory/) is a plain HTML file in this repository. GitHub Pages serves it worldwide for free; every push redeploys it in about a minute. Web-book chapters are installable like an app (PWA).
 
 On a free account Pages serves public repositories; a Pro plan also serves private ones.
 

@@ -1,0 +1,21 @@
+# 인터락 — 이 조건이 깨지면 그 장은 공개되지 않는다(코드: lfaiw.py scrub · gate_scan.py · bookpost.py)
+schema: lfai-world/guardrails v1
+interlocks:
+  - id: mask-personal
+    where: WC-04 gate (편집본 만들 때)
+    rule: 전화번호 · 이메일 · 주민번호 · 계좌 · 따옴표 안 비밀번호 값은 가린다
+  - id: secrets-scan
+    where: WC-04 gate
+    rule: detect-secrets 가 의심하면 그 장은 보류(E-GATE-HOLD) — 공개 · 파생물 생성 안 함
+  - id: human-approval
+    where: WC-04 gate
+    rule: approved.txt 에 있는 장만 05 웹 책으로 출판(A2)
+  - id: public-surface
+    where: 계정
+    rule: 공개 저장소는 프로필과 05 웹 책 둘뿐. 원본 · 원장 · 본사는 비공개
+  - id: no-ai-keys
+    where: 공장
+    rule: 공장은 AI 열쇠를 갖지 않는다. 편집 · 각색은 주인 자신의 AI(또는 GitHub 내장 모델)로
+  - id: plug-fallback
+    where: 플러그 소켓
+    rule: 플러그가 꺼지거나 실패하면 기본 라우트 — 플러그 때문에 공장이 멈추지 않는다

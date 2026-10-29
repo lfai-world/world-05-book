@@ -1,0 +1,19 @@
+{
+  "schema": "lfai-world/error-taxonomy v1",
+  "note": "불량 코드표 — fab.py 가 자동 검출(auto)하거나 사람이 검사에서 붙인다(human). 대시보드 파레토의 기준.",
+  "codes": {
+    "E-CARD-MISSING":  {"station": "WC-06", "detect": "auto",  "desc": "카드 장수가 계획과 다름"},
+    "E-CARD-EMPTY":    {"station": "WC-06", "detect": "auto",  "desc": "카드 내용이 너무 적거나(채움 30% 미만) 위에 몰려 아래가 빔(치우침 0.25 초과)"},
+    "E-TITLE-WRAP":    {"station": "WC-06", "detect": "human", "desc": "제목 줄바꿈 어색(한두 글자만 다음 줄)"},
+    "E-AV-SILENT":     {"station": "WC-07", "detect": "auto",  "desc": "낭독 평균 음량 -45dB 미만(사실상 무음)"},
+    "E-AV-LEN":        {"station": "WC-08", "detect": "auto",  "desc": "영상과 낭독 길이 차이 1초 초과"},
+    "E-VIDEO-NOSUB":   {"station": "WC-08", "detect": "auto",  "desc": "영상에 자막 없음"},
+    "E-VIDEO-MISSING": {"station": "WC-08", "detect": "auto",  "desc": "영상 파일 없음"},
+    "E-CLASS-MISSING": {"station": "WC-09", "detect": "auto",  "desc": "교재 파일 없음"},
+    "E-PRESS-MISSING": {"station": "WC-10", "detect": "auto",  "desc": "공유 키트 없음"},
+    "E-GATE-HOLD":     {"station": "WC-04", "detect": "auto",  "desc": "관문 검사기가 멈춘 장(비밀값 의심)"},
+    "E-PLUG-PENDING":  {"station": "WC-07", "detect": "auto",  "desc": "플러그 결과 대기 — 기본 라우트로 출하됨"},
+    "E-CONTENT":       {"station": "WC-05", "detect": "human", "desc": "내용 오류 · 어색한 편집(사람 검사)"},
+    "E-OTHER":         {"station": "ALL",   "detect": "human", "desc": "기타(사람 검사 메모)"}
+  }
+}

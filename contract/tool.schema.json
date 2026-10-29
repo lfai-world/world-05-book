@@ -1,0 +1,24 @@
+{
+  "schema": "lfai-world/tool-interface v2",
+  "note": "장비 인터페이스 — 공정 12개마다 소켓 하나. in/out = 그 공정이 받는 것과 내놓는 것, default = 기본 라우트, plug = 추가 라우트를 꽂을 수 있나, out_check = 플러그 결과물이 지켜야 하는 계약(plugs.py 가 집행 — 위반이면 버리고 기본 라우트). 서랍에 쓰는 것은 엔진(커널) 하나뿐.",
+  "sockets": {
+    "inbox":   {"wc": "WC-01", "in": "대화 원본(Issue 양식 · 파일 · 주문 intake)", "out": "raw/<날짜>-<이름>.md", "default": "lfaiw ingest", "plug": false},
+    "ledger":  {"wc": "WC-02", "in": "raw/*", "out": "clean/<lot>.md · turns/<lot>.json · LOTS.json", "default": "lfaiw ledger(중복 해시 거름)", "plug": false},
+    "atoms":   {"wc": "WC-03", "in": "clean/<lot>.md", "out": "<lot>/NN.md (지식원자)", "default": "lfaiw atoms(recipe atoms min/max)", "plug": false},
+    "gate":    {"wc": "WC-04", "in": "원자 · 편집본", "out": "pending/<lot>.md · approved.txt(주문 approve 로만)", "default": "가림 + detect-secrets + 사람 승인", "plug": false},
+    "book":    {"wc": "WC-05", "in": "승인된 편집본", "out": "chapters/<lot>.html(세 겹)", "default": "lfaiw publish + bookpost", "plug": false},
+    "cards":   {"wc": "WC-06", "in": "편집본 절", "out": "<lot>/NN.png 1080×1350", "default": "Chrome 헤드리스", "plug": false},
+    "voice":   {"wc": "WC-07", "in": {"voice.wav": "기본 낭독(44.1kHz mono)", "_job.json": "plug · opts"}, "out": {"voice.wav": "바뀐 낭독(길이 보존)"},
+                "default": "edge-tts", "plug": true,
+                "out_check": {"file": "voice.wav", "media": true, "min_sec": 3, "same_len_as": "voice.wav", "len_tol_sec": 1.0, "min_bytes": 2000}},
+    "motion":  {"wc": "WC-08", "in": "카드 · 낭독 · 시간표", "out": "<lot>.mp4 1080×1920 · 자막", "default": "HyperFrames(→ ffmpeg 슬라이드)", "plug": false},
+    "motion-extra": {"wc": "WC-08", "in": {"job.json": "lot · title · sections · webtoon_script · timing"}, "out": {"video.mp4": "추가 영상"},
+                "default": "본 영상만", "plug": true,
+                "out_check": {"file": "video.mp4", "media": true, "min_sec": 3, "w": 1080, "h": 1920, "min_bytes": 10000}},
+    "class":   {"wc": "WC-09", "in": "편집본", "out": "<lot>.md · .html", "default": "derive lesson", "plug": false},
+    "press":   {"wc": "WC-10", "in": "결과물 주소", "out": "<lot>.md 공유 키트 · 출하 릴리스 ship-<lot>", "default": "derive share_kit + fab ship", "plug": false},
+    "archive": {"wc": "WC-11", "in": "웹 책", "out": "Pagefind 색인 · 말투 데이터", "default": "pagefind", "plug": false},
+    "mirror":  {"wc": "WC-12", "in": "서랍 13개", "out": "git bundle 릴리스(최근 5)", "default": "lfaiw backup", "plug": false}
+  },
+  "routes": {"local": "~/.lfai-switch/plugs/<name>/run IN OUT", "switch": "대기열 저장소 릴리스 job-<plug>-<lot>-<key> (queued → running → done|fail · 결과 서명 검증)"}
+}

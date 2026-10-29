@@ -1,0 +1,19 @@
+# 권한표 — 커널(kernel.py)이 실제로 읽고 집행한다. 서명 안 된 주문 · 표에 없는 역할의 주문은 거절.
+schema: lfai-world/permissions v2
+namespace: lfai-world-order          # ssh-keygen -Y sign/verify 네임스페이스
+principals:                          # allowed_signers 의 이름 → 역할
+  owner-gate: owner                  # 주인이 관문 Issue 에 단 댓글(owner-says 가 관문 저장소 비밀 키로 서명)
+  owner-form: owner                  # 주인이 inbox Issue 양식으로 넣은 대화
+  claude: agent-dev                  # 설계 · 개발 에이전트
+  deepseek: agent-test               # 시험 에이전트
+roles:
+  owner:      [intake, approve, hold, verdict, plug, recipe, run, halt, resume]
+  agent-dev:  [intake, plug, recipe, run]
+  agent-test: [intake, run]
+public: [<owner>, <prefix>-05-book]
+secrets:
+  WORLD_WIRE_TOKEN:   {where: [01-inbox, 02-ledger, 04-gate, hq], holder: 커널 · 공장 러너만 — 에이전트에게 주지 않는다}
+  WORLD_ORDER_KEY:    {where: [01-inbox, 04-gate], holder: owner-says · issue-intake 가 주인 대신 서명}
+  WORLD_SWITCH_TOKEN: {where: [02-ledger], holder: 플러그 공급자 발급, 선택}
+agents_token: "에이전트는 본사 Issues 쓰기만 되는 좁은 토큰 + 자기 서명 키로 주문만 넣는다(서랍 쓰기 권한 없음)"
+never: [비밀번호 · 2단계 코드 · AI 열쇠를 저장소에 쓰기]

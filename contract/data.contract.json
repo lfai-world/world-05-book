@@ -1,0 +1,8 @@
+{
+  "schema": "lfai-world/lot-traveler v1",
+  "note": "LOT 트래블러 — 장 하나가 공정을 지나며 남기는 기록(world-02-ledger/LOTS.json). 원가 · 검사 결과는 world-hq/status/fab.json · finance/ledger.jsonl 에 LOT 번호로 붙는다.",
+  "lot": {"id": "LOT-<YYYYMMDD>-<hash8>", "title": "str", "llm": "대화 상대 AI", "state": "출하 | 대기 | 되돌림 | 스크랩",
+          "track": [{"station": "inbox|ledger|atoms|gate|book|cards|voice|motion|class|press|archive|mirror", "status": "done|wait|back|scrap", "note": "str", "at": "ISO-8601 KST"}]},
+  "fab":  {"defects": ["error.taxonomy 코드"], "metrics": {"card_fill": "0~1", "av_delta": "초", "mean_db": "dB"}, "pass": "bool"},
+  "cost": {"std_min": "표준 분", "actual_min": "실제 분(배부 포함)", "variance_min": "실제 - 표준"}
+}
