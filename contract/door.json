@@ -85,7 +85,8 @@
     },
     "human": {
       "sources": [
-        "manual"
+        "manual",
+        "issue"
       ],
       "actors": [
         "owner"
