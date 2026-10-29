@@ -1,6 +1,6 @@
-# QA — 2026-10-29 16:01 KST
+# QA — 2026-10-29 16:04 KST
 
-**94 / 100** — measured by the runner itself; anything it cannot measure scores 0.
+**100 / 100** — measured by the runner itself; anything it cannot measure scores 0.
 
 | Area | Check | Points | Score | Evidence |
 |---|---|---|---|---|
@@ -15,7 +15,7 @@
 | Public | Every chapter ships all outputs (cards · audio · video · lesson) | 10 | 10 | 7/7 |
 | Public | Search index and RSS feed published | 6 | 6 | pagefind · feed.xml |
 | Public | Open-source gate scanner ran; nothing held is public | 6 | 6 | held [] |
-| Public | Showroom (WC-05 web book) lists every chapter | 8 | 0 | HTTP 200 · 0/7 chapters |
+| Public | Showroom (WC-05 web book) lists every chapter | 8 | 8 | HTTP 200 · 7/7 chapters |
 | Public | Personal data in published chapters = 0 | 10 | 10 | found 0 |
 | Profile | Profile live numbers match the factory | 10 | 10 | profile 7 · factory 7 |
 | Profile | Profile images all present | 5 | 5 | 9 images |
