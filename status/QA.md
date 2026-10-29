@@ -1,13 +1,13 @@
-# QA — 2026-10-29 09:33 KST
+# QA — 2026-10-29 15:31 KST
 
-**100 / 100** — measured by the runner itself; anything it cannot measure scores 0.
+**92 / 100** — measured by the runner itself; anything it cannot measure scores 0.
 
 | Area | Check | Points | Score | Evidence |
 |---|---|---|---|---|
 | Line | Every shipped lot passed all 12 stations | 12 | 12 | 7/7 complete · 0 waiting at the gate |
 | Line | Wiring — every declared line connected | 10 | 10 | 14/14 |
 | Line | Yield ≥ 80 % | 8 | 8 | yield 100.0% |
-| Line | Signals and runner — last runs succeeded | 10 | 10 | all green |
+| Line | Signals and runner — last runs succeeded | 10 | 0 | problems ['ledger:failure'] |
 | Public | Public = the profile and the web book (WC-05 showroom) only — HQ stays private | 10 | 10 | public ['lfai-world', 'world-05-book'] |
 | Public | Public repositories hold zero keys | 8 | 8 | {'lfai-world': 0, 'world-05-book': 0} |
 | Public | Dashboard is up and shows the live feed | 6 | 6 | HTTP 200 |
