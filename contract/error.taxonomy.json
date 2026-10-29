@@ -12,7 +12,7 @@
     "E-CLASS-MISSING": {"station": "WC-09", "detect": "auto",  "desc": "교재 파일 없음"},
     "E-PRESS-MISSING": {"station": "WC-10", "detect": "auto",  "desc": "공유 키트 없음"},
     "E-GATE-HOLD":     {"station": "WC-04", "detect": "auto",  "desc": "관문 검사기가 멈춘 장(비밀값 의심)"},
-    "E-PLUG-PENDING":  {"station": "WC-07", "detect": "auto",  "desc": "플러그 결과 대기 — 기본 라우트로 출하됨"},
+    "E-PLUG-PENDING":  {"station": "WC-07", "detect": "auto", "level": "info", "desc": "플러그 결과 대기 — 기본 라우트로 출하(불량 아님 · 다음 회전 회수)"},
     "E-CONTENT":       {"station": "WC-05", "detect": "human", "desc": "내용 오류 · 어색한 편집(사람 검사)"},
     "E-OTHER":         {"station": "ALL",   "detect": "human", "desc": "기타(사람 검사 메모)"}
   }
