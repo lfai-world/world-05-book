@@ -1,6 +1,6 @@
-# QA — 2026-10-29 23:54 KST
+# QA — 2026-10-30 00:03 KST
 
-**94 / 100** — measured by the runner itself; anything it cannot measure scores 0.
+**100 / 100** — measured by the runner itself; anything it cannot measure scores 0.
 
 | Area | Check | Points | Score | Evidence |
 |---|---|---|---|---|
@@ -8,7 +8,7 @@
 | Line | Wiring — every declared line connected | 10 | 10 | 14/14 |
 | Line | Yield ≥ 80 % | 8 | 8 | yield 100.0% |
 | Line | Signals and runner — last runs succeeded | 10 | 10 | all green |
-| Public | Public = the profile and the web book (WC-05 showroom) only — HQ stays private | 10 | 0 | public ['lfai-world', 't1-05-book', 'world-05-book'] |
+| Public | Public = the profile and each factory's web book (WC-05 showroom) only — every HQ stays private | 10 | 10 | public ['lfai-world', 't1-05-book', 'world-05-book'] · allowed ['lfai-world', 't1-05-book', 'world-05-book'] |
 | Public | Public repositories hold zero keys | 8 | 8 | {'lfai-world': 0, 't1-05-book': 0, 'world-05-book': 0} |
 | Public | Dashboard is up and shows the live feed | 6 | 6 | HTTP 200 |
 | Public | Every chapter opens in three layers | 6 | 6 | 7/7 |
@@ -22,4 +22,4 @@
 | Profile | Playbook linked from the profile | 5 | 5 | link |
 | Fab | Every chapter meets the output spec (contract/output.schema.json) — auto inspection | 12 | 12 | 7/7 · defects {} |
 | Fab | Contract pack installed (charter · FMEA · spec · defect codes · guardrails · permissions · agent card) | 6 | 6 | contract/ |
-| Fab | Cost ledger written and month projection under 70 % of the free minutes | 6 | 6 | 165 min · projected 8.8% |
+| Fab | Cost ledger written and month projection under 70 % of the free minutes | 6 | 6 | 175 min · projected 9.0% |
