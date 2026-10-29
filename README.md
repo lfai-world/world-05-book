@@ -24,7 +24,7 @@ This account is a package: a headquarters plus twelve drawers that turn AI conve
 
 1. A conversation lands in drawer 01 — shared from a phone or entered through an issue form.
 2. A private runner cleans it (02), splits it (03) and holds it at the gate (04) until **a person approves**. An open-source scanner (detect-secrets) checks it again on the way out.
-3. Drawers 06 – 10 make the outputs — cards, narration in the owner's voice, a vertical video (HyperFrames), a lesson, a share kit.
+3. Drawers 06 – 10 make the outputs — cards, narration (free edge TTS voice), a vertical video (HyperFrames), a lesson, a share kit.
 4. Everything approved is **posted to this drawer**; its `PUBLISH` list decides what goes on the web, and a secret check runs before every deploy.
 5. Drawer 11 keeps the search index and the owner's style data; drawer 12 keeps full backups as releases.
 
