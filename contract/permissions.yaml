@@ -4,6 +4,7 @@ namespace: lfai-world-order          # ssh-keygen -Y sign/verify 네임스페이
 principals:                          # allowed_signers 의 이름 → 역할
   owner-gate: owner                  # 주인이 관문 Issue 에 단 댓글(owner-says 가 관문 저장소 비밀 키로 서명)
   owner-form: owner                  # 주인이 inbox Issue 양식으로 넣은 대화
+  owner-bot: owner                   # 텔레그램 봇(Actions cron)이 주인 말을 그대로 서명해 넣은 주문
   claude: agent-dev                  # 설계 · 개발 에이전트
   deepseek: agent-test               # 시험 에이전트
 roles:

@@ -1,0 +1,16 @@
+{
+  "schema": "lfai-world/notify v1",
+  "note": "알림 정책 — 여기 켜진 종류만 보낸다. 그 밖의 사건은 조용히 장부(journal/)에만 남긴다. 고객 값(WORLD_TG_TOKEN/CHAT)이 없으면 아무것도 나가지 않는다.",
+  "kinds": {
+    "approval": {"on": true, "why": "공개 승인 필요 — 사람이 결정(무엇이 · 어디로 · 되돌릴 수 있나 · 원가 · 성적서)"},
+    "ship": {"on": true, "why": "출하 완료"},
+    "fail": {"on": true, "why": "회전 실패"},
+    "budget70": {"on": true, "why": "이번 달 예산 70% 초과 예상"},
+    "reject": {"on": true, "why": "커널 거절 — 주문이 안 먹었다"},
+    "digest": {"on": true, "why": "요약(반복 작업 job=digest)"},
+    "reply": {"on": true, "why": "주인 요청에 대한 답(주인이 말을 걸었을 때만)"},
+    "welcome": {"on": true, "why": "봇 설치 직후 한 번 — 사용법 한 줄"}
+  },
+  "max_per_day": 60,
+  "dedupe_hours": 6
+}

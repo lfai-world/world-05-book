@@ -1,4 +1,5 @@
 owner-gate ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHfYPn/X4PpZAD+ZSp0rhVvVxjEhwTd5HZ2Ep98e3M03 owner-gate@lfai-world
 owner-form ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILu8AqwErbFT2vIOE19difilGmtQ9pjpN0xOczYuKnds owner-form@lfai-world
+owner-bot ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF6HBE8lNlDiYcxDC3iJ7fET+DVtueobyAk9qQxvAph+ owner-bot@lfai-world
 deepseek ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOceg6AeYrUacE6JpSpONbWBwiZcusnRuuPnHF7o6Q5x deepseek@test
 claude ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHnQXtCPb9oTySjqfJ3vysec1LvwD7uJ+R4ycFUuDVgZ claude@lfai-world-order

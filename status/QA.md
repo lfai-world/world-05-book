@@ -1,13 +1,13 @@
-# QA — 2026-10-30 07:07 KST
+# QA — 2026-10-30 07:43 KST
 
-**94 / 100** — measured by the runner itself; anything it cannot measure scores 0.
+**100 / 100** — measured by the runner itself; anything it cannot measure scores 0.
 
 | Area | Check | Points | Score | Evidence |
 |---|---|---|---|---|
 | Line | Every shipped lot passed all 12 stations | 12 | 12 | 7/8 complete · 1 waiting at the gate |
 | Line | Wiring — every declared line connected | 10 | 10 | 14/14 |
 | Line | Yield ≥ 80 % | 8 | 8 | yield 87.5% |
-| Line | Signals and runner — last runs succeeded | 10 | 0 | problems ['ledger:cancelled'] |
+| Line | Signals and runner — last runs succeeded | 10 | 10 | all green |
 | Public | Public = the profile and each factory's web book (WC-05 showroom) only — every HQ stays private | 10 | 10 | public ['lfai-world', 't1-05-book', 'world-05-book'] · allowed ['lfai-world', 't1-05-book', 'world-05-book'] |
 | Public | Public repositories hold zero keys | 8 | 8 | {'lfai-world': 0, 't1-05-book': 0, 'world-05-book': 0} |
 | Public | Dashboard is up and shows the live feed | 6 | 6 | HTTP 200 |
@@ -22,4 +22,4 @@
 | Profile | Playbook linked from the profile | 5 | 5 | link |
 | Fab | Every chapter meets the output spec (contract/output.schema.json) — auto inspection | 12 | 12 | 7/7 · defects {} |
 | Fab | Contract pack installed (charter · FMEA · spec · defect codes · guardrails · permissions · agent card) | 6 | 6 | contract/ |
-| Fab | Cost ledger written and month projection under 70 % of the free minutes | 6 | 6 | 202 min · projected 10.4% |
+| Fab | Cost ledger written and month projection under 70 % of the free minutes | 6 | 6 | 216 min · projected 11.2% |
