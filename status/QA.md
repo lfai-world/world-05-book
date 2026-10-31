@@ -1,4 +1,4 @@
-# QA — 2026-10-30 09:34 KST
+# QA — 2026-10-31 09:17 KST
 
 **100 / 100** — measured by the runner itself; anything it cannot measure scores 0.
 
@@ -22,4 +22,4 @@
 | Profile | Playbook linked from the profile | 5 | 5 | link |
 | Fab | Every chapter meets the output spec (contract/output.schema.json) — auto inspection | 12 | 12 | 7/7 · defects {} |
 | Fab | Contract pack installed (charter · FMEA · spec · defect codes · guardrails · permissions · agent card) | 6 | 6 | contract/ |
-| Fab | Cost ledger written and month projection under 70 % of the free minutes | 6 | 6 | 233 min · projected 12.0% |
+| Fab | Cost ledger written and month projection under 70 % of the free minutes | 6 | 6 | 238 min · projected 11.9% |
