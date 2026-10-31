@@ -1,0 +1,44 @@
+{
+  "schema": "lfai-world/runtime v1",
+  "source": "design/08-런타임-배분표.md (lfai-as af570f9) · 박씨 결정 B — 기기 우선",
+  "note": "작업(원가 중심점)마다 런타임을 하나로 정한다. 기기 몫은 GitHub 로 넘기지 않고 기다린다. 코드 집행: derive.py(실행 기록 runs/media.jsonl) · fab.py(E-RUNTIME 검사 · 기기 시간) · daemon.py(기기 몫 실행) · factory-run(media 작업 없음).",
+  "rules": {
+    "1": {"id": "purpose", "github": "저장소 내용을 빌드 · 시험 · 배포 · 출판하는가", "device": "새 미디어 합성 · 외부 서비스 호출 · 콘텐츠 연산"},
+    "2": {"id": "shape", "github": "사건(푸시 · Issue · 승인)이 있을 때 짧게 · 하루 1회 점검", "device": "상시 대기 · 폴링 · 잦은 예약"},
+    "3": {"id": "keys", "github": "외부 서비스 열쇠가 필요 없는가", "device": "텔레그램 · 채널 · 모델 열쇠가 필요 — 열쇠는 기기에만"}
+  },
+  "tasks": {
+    "capture":            {"runtime": "device", "rule": "3", "what": "01 채집 — 캡처 · 붙여넣기(원본은 기기에서 나온다)"},
+    "intake":             {"runtime": "github", "rule": "1,2", "what": "주문 접수(커널) — Issue 사건 1건 = 1분"},
+    "ledger":             {"runtime": "github", "rule": "1", "what": "02 원장 · 필터"},
+    "atoms":              {"runtime": "github", "rule": "1", "what": "03 지식원자"},
+    "gate":               {"runtime": "github", "rule": "1", "what": "04 관문 — 가림 · 비밀값 검사 · 승인 기록"},
+    "class":              {"runtime": "github", "rule": "1", "what": "09 교재"},
+    "press_copy":         {"runtime": "github", "rule": "1", "what": "10 공유 문구"},
+    "archive":            {"runtime": "github", "rule": "1", "what": "11 검색 색인"},
+    "book":               {"runtime": "github", "rule": "1", "what": "05 웹 책 빌드 · Pages 출판"},
+    "cards":              {"runtime": "github", "rule": "1", "what": "06 카드(글 → 이미지) — 경계 · 무거워지면 기기로"},
+    "mirror":             {"runtime": "github", "rule": "1", "what": "12 사본(백업 릴리스) · 복원 훈련(월 1회)"},
+    "kernel":             {"runtime": "github", "rule": "1,2", "what": "커널 — 주문 검사 · 실행 · 저널"},
+    "fab":                {"runtime": "github", "rule": "1", "what": "팹 계측 · 성적서 · 원가 원장 · 대시보드"},
+    "daily_check":        {"runtime": "github", "rule": "2", "what": "하루 1회 점검 회전 — 미디어 제외 · 빈 회전"},
+    "voice":              {"runtime": "device", "rule": "1,3", "station": "WC-07", "parts": ["voice"], "what": "07 낭독(TTS) — 휴대폰 가능"},
+    "motion":             {"runtime": "device", "rule": "1", "station": "WC-08", "parts": ["motion"], "what": "08 영상 렌더 — PC · 미니PC 우선"},
+    "mcp_plug":           {"runtime": "device", "rule": "1,3", "what": "08 배경음 · 07 주인 목소리 · 문구 검사(박씨 MCP) — 스위치 · 로컬"},
+    "send_external":      {"runtime": "device", "rule": "3", "what": "10 외부 송출(텔레그램 · 채널) — 고객 열쇠는 기기에만"},
+    "poll":               {"runtime": "device", "rule": "2,3", "what": "텔레그램 주문 받기 · 알림 — 5분 폴링을 GitHub 에 두지 않는다"},
+    "repeat_jobs":        {"runtime": "device", "rule": "2", "what": "주인이 정한 반복 작업 — 로컬 데몬"},
+    "llm_gpu":            {"runtime": "council", "rule": "-", "what": "자체 LLM · GPU 일 — 상위 티어(고객 서버)"}
+  },
+  "device_share": {
+    "waits": true,
+    "no_cloud_fallback": true,
+    "runner": "로컬 데몬 우선 — 기기가 저장소를 당겨 기기 몫을 하고 결과를 push(Actions 를 안 거침). 셀프 호스팅 러너는 비공개 저장소에만.",
+    "ship_first": ["book", "cards", "class", "press_copy"],
+    "attach_later": ["voice", "motion"],
+    "coa_note": "기기 대기",
+    "record": "world-02-ledger/runs/media.jsonl — {lot, parts, sec, host, runner, at}. host≠device 면 불량 E-RUNTIME."
+  },
+  "defect": "E-RUNTIME",
+  "targets": {"github_min_per_chapter": 2, "media_github_min": 0}
+}
