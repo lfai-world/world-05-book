@@ -11,7 +11,7 @@
 | Data access | 서랍 12개 + 본사(비공개) · 공개는 05 웹 책 · 프로필 |
 | Known failure modes | 불량 상위: 없음 |
 | Eval summary | 자동 합격 7/7 · 사람 OK 0/0 판정 |
-| Last evaluated | 2026-11-04 10:00 KST (run 41750695294) |
-| Budget | 이번 달 16/2000분 (0.8%) · 월말 예상 6.0% · 기기 0.0분(0원) |
-| Rollback | world-12-mirror 릴리스 mirror-20261104-095954 (최근 5개 보관) |
+| Last evaluated | 2026-11-05 10:12 KST (run 41946596701) |
+| Budget | 이번 달 24/2000분 (1.2%) · 월말 예상 7.2% · 기기 0.0분(0원) |
+| Rollback | world-12-mirror 릴리스 mirror-20261105-101207 (최근 5개 보관) |
 | Incident contact | 계정 주인 · 텔레그램 보고 |
