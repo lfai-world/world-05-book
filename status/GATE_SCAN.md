@@ -1,5 +1,5 @@
-# Gate scan — 2026-11-20 10:58
+# Gate scan — 2026-11-21 10:53
 
-Scanner: detect-secrets (open source) · files 22 · findings 0 · held lots 0
+Scanner: detect-secrets (open source) · files 23 · findings 0 · held lots 0
 
 No secrets found in anything waiting at, or approved through, the gate.
